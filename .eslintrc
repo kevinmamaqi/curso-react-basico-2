@@ -1,0 +1,12 @@
+{
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020
+    },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "plugins": ["react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "warn"
+  }
+}
