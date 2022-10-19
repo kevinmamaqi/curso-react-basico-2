@@ -58,6 +58,15 @@ Exportar los distintos módulos desde la carpeta:
 1. Usar un indice (index.js)
 2. Ordenar las exportaciones alfabeticamente.
 
+# 4. useState
+Enlace a la documentación oficial: https://es.reactjs.org/docs/hooks-reference.html#usestate
 
-# 4. Extras JS
+Consideraciones:
+1. Devuelve el estado (en una variable) y una función para actualizar el estado.
+2. El estado persiste si el componente se re-renderiza.
+3. El cambio de estado provoca que los componentes se re-rendericen. Puede causar problemas de performance.
+4. Se puede inicializar el estado.
+
+
+# Extras JS
 1. Destructuración de variables en JS: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

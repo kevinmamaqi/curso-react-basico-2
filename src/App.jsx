@@ -1,10 +1,8 @@
-import { useState } from 'react'
-import { Text, Title, Triangle } from './components/atoms'
-import { InputNumberGroup } from './components/molecules'
+import { Text, Title } from './components/atoms'
+import { CircleShape, SquareShape, TriangleShape } from './components/organisms'
 import { colors } from './styles'
 
 function App() {
-  const [triangleSize, setTriangleSize] = useState(50)
   return (
     <div>
       <Title order={3}>Traductor</Title>
@@ -12,16 +10,9 @@ function App() {
       <Text color={colors.mainColor}>
         Escribe las siguientes palabras en tu idioma.
       </Text>
-      <form>
-        <InputNumberGroup
-          id="triangle-size"
-          label="Triangle size"
-          onChange={(e) => setTriangleSize(e.target.value)}
-          min="30"
-          max="200"
-        />
-      </form>
-      <Triangle size={triangleSize} />
+      <TriangleShape initialSize={50} />
+      <CircleShape initialSize={90} />
+      <SquareShape initialSize={130} />
     </div>
   )
 }
