@@ -1,24 +1,31 @@
-import { Text } from "./components/atoms";
-import { colors } from "./styles";
+import { useState } from 'react'
+import { Text, Title } from './components/atoms'
+import { InputTextGroup } from './components/molecules/InputTextGroup'
+import { colors } from './styles'
 
 function App() {
+  const [hola, setHola] = useState('')
+  console.log(hola)
   return (
     <div>
-      <h1>Hola</h1>
-      <Text>Mi texto</Text>
-      <Text color={colors.mainColor}>Mi otro texto</Text>
+      <Title order={3}>Traductor</Title>
+      <Text>Bienvenido</Text>
+      <Text color={colors.mainColor}>
+        Escribe las siguientes palabras en tu idioma.
+      </Text>
       <form>
-        <div>
-          <label>Hola</label>
-          <input type="text" />
-        </div>
-        <div>
-          <label>Adios</label>
-          <input type="text" />
-        </div>
+        <InputTextGroup
+          id="hola"
+          label="Hola"
+          onChange={(e) => setHola(e.target.value)}
+          onBlur={() => {}}
+          min="3"
+          max="24"
+        />
+        <InputTextGroup label="Adios" id="adios" />
       </form>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

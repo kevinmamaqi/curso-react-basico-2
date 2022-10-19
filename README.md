@@ -10,6 +10,8 @@
 1. GitLens - Git supercharged
 2. ES7+ React/Redux/React Native shortcodes
 3. vscode-styled-components
+4. ESLint
+5. Prettier
 
 ## Iniciar un proyecto con Vite
 1. Ir a https://vitejs.dev/
@@ -40,6 +42,8 @@ ___
 # 3. Estructura del proyecto
 
 ## Organización de las carpetas
+Para organizar las carpetas se utiliza el modelo Atómico de Brad Frost: https://bradfrost.com/blog/post/atomic-web-design/
+
 - assets
 - components
     - atoms
@@ -50,4 +54,10 @@ ___
     - colors
     - dimensions
 
-Para organizar las carpetas se utiliza el modelo Atómico de Brad Frost: https://bradfrost.com/blog/post/atomic-web-design/
+Exportar los distintos módulos desde la carpeta:
+1. Usar un indice (index.js)
+2. Ordenar las exportaciones alfabeticamente.
+
+
+# 4. Extras JS
+1. Destructuración de variables en JS: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

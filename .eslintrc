@@ -1,8 +1,12 @@
 {
-    "parserOptions": {
-        "sourceType": "module",
-        "ecmaVersion": 2020
-    },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "plugins": ["react"],
   "rules": {

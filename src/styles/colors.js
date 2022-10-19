@@ -3,5 +3,6 @@ export const colors = {
   secondaryColor: 'blue',
   text: {
     body: '#333',
+    headings: '#111',
   },
 }
