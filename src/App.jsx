@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { Text, Title } from './components/atoms'
-import { InputTextGroup } from './components/molecules/InputTextGroup'
+import { Text, Title, Triangle } from './components/atoms'
+import { InputNumberGroup } from './components/molecules'
 import { colors } from './styles'
 
 function App() {
-  const [hola, setHola] = useState('')
-  console.log(hola)
+  const [triangleSize, setTriangleSize] = useState(50)
   return (
     <div>
       <Title order={3}>Traductor</Title>
@@ -14,16 +13,15 @@ function App() {
         Escribe las siguientes palabras en tu idioma.
       </Text>
       <form>
-        <InputTextGroup
-          id="hola"
-          label="Hola"
-          onChange={(e) => setHola(e.target.value)}
-          onBlur={() => {}}
-          min="3"
-          max="24"
+        <InputNumberGroup
+          id="triangle-size"
+          label="Triangle size"
+          onChange={(e) => setTriangleSize(e.target.value)}
+          min="30"
+          max="200"
         />
-        <InputTextGroup label="Adios" id="adios" />
       </form>
+      <Triangle size={triangleSize} />
     </div>
   )
 }
