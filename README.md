@@ -67,6 +67,32 @@ Consideraciones:
 3. El cambio de estado provoca que los componentes se re-rendericen. Puede causar problemas de performance.
 4. Se puede inicializar el estado.
 
+# 5. useEffect
+Enlace a la documentación oficial: https://es.reactjs.org/docs/hooks-reference.html#useeffect
+
+1. Se usa para gestionar "sideEffects" porque `Las mutaciones, suscripciones, temporizadores, registro y otros efectos secundarios no están permitidos dentro del cuerpo principal de un componente de función (denominado como render phase de React). Si lo hace, dará lugar a errores confusos e inconsistencias en la interfaz de usuario.`
+2. El array de dependencias determina cuando se ejecuta el código de useEffect.
+3. Si el array de dependecians esta vacio. useEffect solo se ejecuta cuando el componente renderiza.
+4. La función return (o cleanUp) se ejecuta cuando el componente se "desmonta".
+
+```
+// useEffect se ejecuta cada vez que tSize, cSize o sSize cambian.
+useEffect(() => {
+ if (tSize === cSize && cSize === sSize) {
+   alert('Todas las figuras tienen el mismo tamaño')
+ }
+}, [tSize, cSize, sSize]) // Array de dependencias -> Aquí especificamos de que "variables" depende nuestra función
+
+useEffect(() => {
+ console.log('Primer render')
+}, []) // Cuando el array de dependencias esta vacio, solo se ejecuta cuando renderiza.
+
+useEffect(() => {
+ window.addEventListener('click', handleKeyUpEv)
+ return () => window.removeEventListener('click', handleKeyUpEv) // El return (cleanUp), se ejecuta cuando el componente se "desmonta", es decir antes de renderizarse de nuevo, desaparece.
+}, [])
+```
+
 
 # Extras JS
 1. Destructuración de variables en JS: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

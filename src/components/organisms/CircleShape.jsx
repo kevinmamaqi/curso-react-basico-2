@@ -9,22 +9,32 @@ export const CircleShape = ({
   idNumber = 'circle-size',
   labelColor = 'Circle color',
   labelSize = 'Circle size',
+  getSize,
 }) => {
   const [circleSize, setCircleSize] = useState(initialSize)
   const [circleColor, setCircleColor] = useState(initialColor)
+
+  const handleChange = (e) => {
+    const { value } = e.target
+    setCircleSize(value)
+    if (getSize) {
+      getSize(value)
+    }
+  }
+
   return (
     <>
       <form>
         <InputNumberGroup
-          id={idColor}
+          id={idNumber}
           label={labelSize}
-          onChange={(e) => setCircleSize(e.target.value)}
+          onChange={handleChange}
           min="30"
           max="200"
           defaultValue={circleSize}
         />
         <InputColorGroup
-          id={idNumber}
+          id={idColor}
           label={labelColor}
           onChange={(e) => setCircleColor(e.target.value)}
           defaultValue={circleColor}

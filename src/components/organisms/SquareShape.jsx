@@ -9,16 +9,25 @@ export const SquareShape = ({
   idNumber = 'square-size',
   labelColor = 'Square color',
   labelSize = 'Square size',
+  getSize,
 }) => {
   const [squareSize, setSquareSize] = useState(initialSize)
   const [squareColor, setSquareColor] = useState(initialColor)
+
+  const handleChange = (e) => {
+    setSquareSize(e.target.value)
+    if (getSize) {
+      getSize(e.target.value)
+    }
+  }
+
   return (
     <>
       <form>
         <InputNumberGroup
           id={idColor}
           label={labelSize}
-          onChange={(e) => setSquareSize(e.target.value)}
+          onChange={handleChange}
           min="30"
           max="200"
           defaultValue={squareSize}
