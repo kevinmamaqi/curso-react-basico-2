@@ -1,3 +1,4 @@
+export * from './Container'
 export * from './figures'
 export * from './InputColor'
 export * from './InputNumber'

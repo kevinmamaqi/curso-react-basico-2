@@ -1,8 +1,8 @@
-import { Text } from '../atoms'
+import { Container, Text } from '../atoms'
 
 export const Header = () => {
   return (
-    <div
+    <Container
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -11,6 +11,6 @@ export const Header = () => {
     >
       <Text>MIPISO.com.es</Text>
       <Text>Bienvenido Marcos</Text>
-    </div>
+    </Container>
   )
 }

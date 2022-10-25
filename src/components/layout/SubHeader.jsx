@@ -1,9 +1,10 @@
 import React from 'react'
 import { colors } from '../../styles'
+import { Container } from '../atoms'
 
 export const SubHeader = () => {
   return (
-    <div
+    <Container
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -12,6 +13,6 @@ export const SubHeader = () => {
       }}
     >
       SubHeader
-    </div>
+    </Container>
   )
 }

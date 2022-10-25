@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Container } from '../atoms'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { SubHeader } from './SubHeader'
@@ -8,7 +9,7 @@ export const Body = ({ children }) => {
     <>
       <Header />
       <SubHeader />
-      {children}
+      <Container>{children}</Container>
       <Footer />
     </>
   )
