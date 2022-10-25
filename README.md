@@ -93,6 +93,18 @@ useEffect(() => {
 }, [])
 ```
 
+# 6. PropTypes
+
+
+# 7. App
+
+1. Button
+2. Select
+3. Icon
+4. Header / SubHeader
+5. Container (styling)
+6. Card, (2 versiones)
+
 
 # Extras JS
 1. Destructuración de variables en JS: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
