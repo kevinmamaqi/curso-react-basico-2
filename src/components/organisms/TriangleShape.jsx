@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Triangle } from '../atoms'
 import { InputColorGroup, InputNumberGroup } from '../molecules'
 
@@ -41,4 +42,14 @@ export const TriangleShape = ({
       <Triangle size={triangleSize} color={triangleColor} />
     </>
   )
+}
+
+TriangleShape.propTypes = {
+  initialSize: PropTypes.number,
+  initialColor: PropTypes.string,
+  idColor: PropTypes.func,
+  idNumber: PropTypes.string,
+  labelColor: PropTypes.string,
+  labelSize: PropTypes.func,
+  getSize: PropTypes.func.isRequired,
 }

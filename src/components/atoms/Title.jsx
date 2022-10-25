@@ -1,4 +1,5 @@
 import { colors, dimensions } from '../../styles'
+import PropTypes from 'prop-types'
 
 export function Title({
   children,
@@ -13,4 +14,21 @@ export function Title({
       {children}
     </Title>
   )
+}
+
+Title.propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  order: function (props, propName, componentName) {
+    if (props[propName] < 1 || props[propName] > 6) {
+      return new Error(
+        'Invalid prop `' +
+          propName +
+          '` supplied to' +
+          ' `' +
+          componentName +
+          '`. The order property should be between 1 and 6 -> [1, ...6].'
+      )
+    }
+  },
 }

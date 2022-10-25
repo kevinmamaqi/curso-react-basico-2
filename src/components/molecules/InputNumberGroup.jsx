@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 import { InputNumber, Label } from '../atoms'
 
 export const InputNumberGroup = ({ label, id, onChange, ...rest }) => {
@@ -8,4 +8,10 @@ export const InputNumberGroup = ({ label, id, onChange, ...rest }) => {
       <InputNumber id={id} name={id} onChange={onChange} {...rest} />
     </div>
   )
+}
+
+InputNumberGroup.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 }

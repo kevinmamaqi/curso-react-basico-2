@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const initialWidth = 531.74
 const initialHeight = 460.5
@@ -22,4 +23,9 @@ export const Triangle = ({ size = 100, color = '#FF0000' }) => {
       <polygon fill={color} points="0.866,460 265.87,1 530.874,460 " />
     </svg>
   )
+}
+
+Triangle.propTypes = {
+  size: PropTypes.number,
+  color: PropTypes.string,
 }
