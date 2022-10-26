@@ -1,5 +1,6 @@
 export * from './Container'
 export * from './figures'
+export * from './Icon'
 export * from './InputColor'
 export * from './InputNumber'
 export * from './InputText'
