@@ -15,4 +15,9 @@ export const dimensions = {
     large: '24px',
     xlarge: '32px',
   },
+  borderRadius: {
+    xs: '3px',
+    base: '6px',
+    xl: '12px',
+  },
 }
