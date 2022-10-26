@@ -14,7 +14,7 @@ export const HouseCard = ({ title, link, price, img, ...rest }) => {
   )
 }
 
-Card.propTypes = {
+HouseCard.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
