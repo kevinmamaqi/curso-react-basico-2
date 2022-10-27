@@ -4,8 +4,13 @@ export function Text({
   children,
   color = colors.text.body,
   size = dimensions.font.base,
+  ...rest
 }) {
-  return <p style={{ color: color, fontSize: size }}>{children}</p>
+  return (
+    <p style={{ color: color, fontSize: size }} {...rest}>
+      {children}
+    </p>
+  )
 }
 
 Text.propTypes = {

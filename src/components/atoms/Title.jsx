@@ -1,12 +1,8 @@
 import { colors, dimensions } from '../../styles'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-export function Title({
-  children,
-  order = 1,
-  color = colors.text.headings,
-  ...rest
-}) {
+function Title({ children, order = 1, color = colors.text.headings, ...rest }) {
   const Title = `h${order}`
   const headerSize = dimensions.font[Title]
   return (
@@ -32,3 +28,6 @@ Title.propTypes = {
     }
   },
 }
+
+const sTitle = styled(Title)``
+export { sTitle as Title }
