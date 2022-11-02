@@ -1,33 +1,39 @@
 import { colors, dimensions } from '../../styles'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-function Title({ children, order = 1, color = colors.text.headings, ...rest }) {
-  const Title = `h${order}`
-  const headerSize = dimensions.font[Title]
-  return (
-    <Title style={{ color: color, fontSize: headerSize }} {...rest}>
-      {children}
-    </Title>
-  )
+const getOrder = (order) => {
+  switch (order) {
+    case 2:
+      return 'h2'
+    case 3:
+      return 'h3'
+    case 4:
+      return 'h4'
+    case 5:
+      return 'h5'
+    case 6:
+      return 'h6'
+
+    default:
+      return 'h1'
+  }
 }
 
-Title.propTypes = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  order: function (props, propName, componentName) {
-    if (props[propName] < 1 || props[propName] > 6) {
-      return new Error(
-        'Invalid prop `' +
-          propName +
-          '` supplied to' +
-          ' `' +
-          componentName +
-          '`. The order property should be between 1 and 6 -> [1, ...6].'
+export const Title = styled.h1
+  .withConfig({
+    shouldForwardProp: (prop) => !['order', 'color'].includes(prop),
+  })
+  .attrs(({ order }) => {
+    if (order < 1 || order > 6) {
+      throw new Error(
+        'The order property should be between 1 and 6 -> [1, ...6].'
       )
     }
-  },
-}
-
-const sTitle = styled(Title)``
-export { sTitle as Title }
+    return {
+      as: getOrder(order),
+    }
+  })`
+    color: ${({ color }) => color || colors.text.headings};
+    font-size: ${({ fontSize, order }) =>
+      fontSize || dimensions.font[order || 'h1']};
+  `

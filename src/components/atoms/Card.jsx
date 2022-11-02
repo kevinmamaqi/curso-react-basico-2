@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { dimensions, colors } from '../../styles'
+import { Container } from './Container'
 
-const CardStyled = styled.div`
+const CardStyled = styled(Container).attrs({ px: '0px' })`
   /* display: flex;
   flex-direction: column; */
   border-radius: ${(props) => props.borderRadius};

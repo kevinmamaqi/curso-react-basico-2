@@ -1,5 +1,6 @@
 import { colors, dimensions } from '../../styles'
 import PropTypes from 'prop-types' // ES6
+import { Text } from './Text'
 
 export function Label({
   children,
@@ -8,9 +9,9 @@ export function Label({
   size = dimensions.font.base,
 }) {
   return (
-    <label htmlFor={htmlFor} style={{ color: color, fontSize: size }}>
+    <Text as="label" htmlFor={htmlFor} color={color} size={size}>
       {children}
-    </label>
+    </Text>
   )
 }
 
