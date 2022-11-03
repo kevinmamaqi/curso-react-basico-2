@@ -108,3 +108,5 @@ useEffect(() => {
 
 # Extras JS
 1. Destructuración de variables en JS: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+2. Fiber, algoritmo de reconociliación: https://github.com/acdlite/react-fiber-architecture
