@@ -1,0 +1,88 @@
+{
+  "pisos": [
+    {
+      "nombre": "Piso 1",
+      "precio": 100000,
+      "foto": "https://kevinmamaqi.com/static/casas/1.jpg",
+      "type": "garaje",
+      "city": "madrid"
+    },
+    {
+      "nombre": "Piso 2",
+      "precio": 838000,
+      "foto": "https://kevinmamaqi.com/static/casas/2.jpg",
+      "type": "chalets",
+      "city": "barcelona"
+    },
+    {
+      "nombre": "Piso 3",
+      "precio": 423900,
+      "foto": "https://kevinmamaqi.com/static/casas/3.jpg",
+      "type": "piso",
+      "city": "zaragoza"
+    },
+    {
+      "nombre": "Piso 4",
+      "precio": 324900,
+      "foto": "https://kevinmamaqi.com/static/casas/4.jpg",
+      "type": "garaje",
+      "city": "zaragoza"
+    },
+    {
+      "nombre": "Piso 5",
+      "precio": 555000,
+      "foto": "https://kevinmamaqi.com/static/casas/5.jpg",
+      "type": "garaje",
+      "city": "zaragoza"
+    },
+    {
+      "nombre": "Piso 6",
+      "precio": 139000,
+      "foto": "https://kevinmamaqi.com/static/casas/6.jpg",
+      "type": "garaje",
+      "city": "barcelona"
+    },
+    {
+      "nombre": "Piso 7",
+      "precio": 415000,
+      "foto": "https://kevinmamaqi.com/static/casas/7.jpg",
+      "type": "chalets",
+      "city": "barcelona"
+    },
+    {
+      "nombre": "Piso 8",
+      "precio": 315000,
+      "foto": "https://kevinmamaqi.com/static/casas/8.jpg",
+      "type": "chalets",
+      "city": "Madrid"
+    },
+    {
+      "nombre": "Piso 9",
+      "precio": 250000,
+      "foto": "https://kevinmamaqi.com/static/casas/9.jpg",
+      "type": "chalets",
+      "city": "Madrid"
+    },
+    {
+      "nombre": "Piso 10",
+      "precio": 215000,
+      "foto": "https://kevinmamaqi.com/static/casas/10.jpg",
+      "type": "garaje",
+      "city": "barcelona"
+    },
+    {
+      "nombre": "Piso 11",
+      "precio": 199000,
+      "foto": "https://kevinmamaqi.com/static/casas/11.jpg",
+      "type": "piso",
+      "city": "zaragoza"
+    },
+    {
+      "nombre": "Piso 12",
+      "precio": 990000,
+      "foto": "https://kevinmamaqi.com/static/casas/12.jpg",
+      "type": "piso",
+      "city": "Madrid"
+    }
+  ]
+}

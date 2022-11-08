@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import { Container } from '../atoms'
 import { Footer } from './Footer'
 import { Header } from './Header'
-import { SubHeader } from './SubHeader'
+// import { SubHeader } from './SubHeader'
 
 export const Body = ({ children }) => {
   return (
     <>
       <Header />
-      <SubHeader />
+      {/* <SubHeader /> */}
       <Container>{children}</Container>
       <Footer />
     </>

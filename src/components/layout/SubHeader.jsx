@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../styles'
 import { Container, FlexBox } from '../atoms'
@@ -17,7 +18,7 @@ const SubHeaderStyled = styled(Container)`
   }
 `
 
-export const SubHeader = () => {
+export const SubHeader = ({ setType, setCity }) => {
   return (
     <SubHeaderStyled align="center">
       <FlexBox direction="row" align="center">
@@ -26,6 +27,7 @@ export const SubHeader = () => {
           label="Tipo"
           defaultText="Piso, chalet o garaje..."
           hideLabel
+          onChange={(e) => setType(e.target.value)}
           options={[
             { value: 'piso', text: 'Piso' },
             { value: 'garaje', text: 'Garaje' },
@@ -37,6 +39,7 @@ export const SubHeader = () => {
           label="Ciudad"
           defaultText="Madrid, Barcelona o Zaragoza..."
           hideLabel
+          onChange={(e) => setCity(e.target.value)}
           options={[
             { value: 'barcelona', text: 'Barcelona' },
             { value: 'madrid', text: 'Madrid' },
@@ -46,4 +49,9 @@ export const SubHeader = () => {
       </FlexBox>
     </SubHeaderStyled>
   )
+}
+
+SubHeader.propTypes = {
+  setCity: PropTypes.func,
+  setType: PropTypes.func,
 }

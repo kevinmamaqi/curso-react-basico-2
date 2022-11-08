@@ -1,12 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Grid } from '../atoms'
 import { HouseCard } from '../molecules'
 
-const getId = (min, max) => {
-  console.log('min', min)
-  console.log('max', max)
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
+const getId = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
 const houseTypeIds = {
   1: 'piso',
@@ -22,21 +19,35 @@ const cityIds = {
 
 const houses = new Array(10).fill(undefined).map(() => ({
   city: cityIds[getId(1, 3)],
-  houseType: houseTypeIds[getId(1, 3)],
+  type: houseTypeIds[getId(1, 3)],
+  price: getId(60000, 1000000),
+  surface: getId(60, 120),
 }))
 
-export const Houses = () => {
+const byCity = (city, house) => (city ? city === house.city : true)
+const byType = (type, house) => (type ? type === house.type : true)
+
+const filterFn = (city, type) => (house) =>
+  [byCity(city, house), byType(type, house)].every(Boolean)
+
+console.log('houses', houses)
+export const Houses = ({ city, type }) => {
   return (
     <Grid gridGap="32px">
-      {houses.map((_, i) => (
+      {houses.filter(filterFn(city, type)).map((_, i) => (
         <HouseCard
           key={i}
           title="Fantastica Casa en ..."
-          price="399.000€"
+          price={`${_.price}€`}
           img="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg"
           link="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg"
         />
       ))}
     </Grid>
   )
+}
+
+Houses.propTypes = {
+  city: PropTypes.string,
+  type: PropTypes.string,
 }
