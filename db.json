@@ -54,14 +54,14 @@
       "precio": 315000,
       "foto": "https://kevinmamaqi.com/static/casas/8.jpg",
       "type": "chalets",
-      "city": "Madrid"
+      "city": "madrid"
     },
     {
       "nombre": "Piso 9",
       "precio": 250000,
       "foto": "https://kevinmamaqi.com/static/casas/9.jpg",
       "type": "chalets",
-      "city": "Madrid"
+      "city": "madrid"
     },
     {
       "nombre": "Piso 10",
@@ -82,7 +82,7 @@
       "precio": 990000,
       "foto": "https://kevinmamaqi.com/static/casas/12.jpg",
       "type": "piso",
-      "city": "Madrid"
+      "city": "madrid"
     }
   ]
 }
