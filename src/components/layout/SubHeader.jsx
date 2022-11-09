@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import { Container, FlexBox } from '../atoms'
+import { Container, FlexBox, Text } from '../atoms'
 import { SelectGroup } from '../molecules'
 import { useSearchParams } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
@@ -26,14 +26,18 @@ export const SubHeader = ({ setType, setCity }) => {
   const [searchParams] = useSearchParams()
 
   const {
+    register,
     control,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (data) => {
+    console.log('data', data)
+    setType(data['house-type'])
+    setCity(data.city)
+  }
 
-  console.log(watch('house-type')) // watch input value by passing the name of it
+  console.log('errors', errors)
 
   return (
     <SubHeaderStyled align="center">
@@ -42,6 +46,12 @@ export const SubHeader = ({ setType, setCity }) => {
         align="center"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <input
+          type="text"
+          {...register('testing', { required: 'Este campo es requerido' })}
+        />
+        {errors.testing && <Text color="red">{errors.testing.message}</Text>}
+
         <Controller
           name="house-type"
           control={control}
