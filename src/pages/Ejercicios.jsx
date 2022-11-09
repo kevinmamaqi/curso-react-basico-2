@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Text, Title } from './components/atoms'
-import { CircleShape, SquareShape, TriangleShape } from './components/organisms'
-import { colors } from './styles'
+import { Text, Title } from '../components/atoms'
+import {
+  CircleShape,
+  SquareShape,
+  TriangleShape,
+} from '../components/organisms'
+import { colors } from '../styles'
 
-function App() {
+export function Ejercicios() {
   const [tSize, setTSize] = useState(50)
   const [cSize, setCSize] = useState(90)
   const [sSize, setSSize] = useState(130)
@@ -29,5 +33,3 @@ function App() {
     </div>
   )
 }
-
-export default App

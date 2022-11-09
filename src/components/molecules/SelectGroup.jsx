@@ -43,10 +43,12 @@ SelectGroup.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  options: PropTypes.arrayOf({
-    value: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  }),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ),
   defaultValue: PropTypes.string,
   defaultText: PropTypes.string,
   hideLabel: PropTypes.bool,

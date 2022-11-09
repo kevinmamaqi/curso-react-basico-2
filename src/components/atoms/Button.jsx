@@ -27,7 +27,7 @@ const Button = ({ children, type = 'button', ...rest }) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
 }
 
 const sButton = styled(Button)``
