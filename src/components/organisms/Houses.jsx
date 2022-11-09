@@ -10,7 +10,7 @@ const byType = (type, house) => (type ? type === house.type : true)
 const filterFn = (city, type) => (house) =>
   [byCity(city, house), byType(type, house)].every(Boolean)
 
-const getUrl = (page) => `http://localhost:3001/pisos?_page=${page}&_limit=3`
+const getUrl = (page) => `http://localhost:3001/pisos?_page=${page}&_limit=12`
 
 export const Houses = ({ city, type }) => {
   const [houses, setHouses] = useState([])

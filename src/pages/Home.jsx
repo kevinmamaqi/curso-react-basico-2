@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Body } from '../components/layout'
 import { SubHeader } from '../components/layout/SubHeader'
 import { Houses } from '../components/organisms'
 
+const formatParmas = (params) => {
+  const res = { ...params }
+  for (const key in params) {
+    if (!params[key]) {
+      delete res[key]
+    }
+  }
+  return res
+}
+
 export const Home = () => {
-  let [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  const initialCity = searchParams.get('city') || ''
-  const initialType = searchParams.get('type') || ''
+  const [city, setCity] = useState(searchParams.get('city') || undefined)
+  const [type, setType] = useState(searchParams.get('type') || undefined)
 
-  console.log('initialCity', initialCity)
-  console.log('initialType', initialType)
+  useEffect(() => {
+    setSearchParams(formatParmas({ city, type }))
+  }, [city, type])
 
-  const [city, setCity] = useState(null)
-  const [type, setType] = useState(null)
   return (
     <Body>
       <SubHeader setCity={setCity} setType={setType} />
