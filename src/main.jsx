@@ -1,13 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Home, Ejercicios } from './pages'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useParams,
+} from 'react-router-dom'
 import 'modern-normalize/modern-normalize.css'
+
+const House = () => {
+  const params = useParams()
+  console.log(params)
+  return <p>Soy una casa</p>
+}
 
 const router = createBrowserRouter([
   {
     element: <Home />,
     path: '/',
+  },
+  {
+    element: <House />,
+    path: '/:id',
   },
   {
     element: <Ejercicios />,

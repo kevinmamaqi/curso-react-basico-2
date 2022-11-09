@@ -24,8 +24,6 @@ export const Houses = ({ city, type }) => {
     setHouses((houses) => [...houses, ...data])
   }, [data])
 
-  console.log(data?.length)
-
   return (
     <>
       {loading && <div>Loading...</div>}
