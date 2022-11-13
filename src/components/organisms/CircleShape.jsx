@@ -5,7 +5,7 @@ import { InputColorGroup, InputNumberGroup } from '../molecules'
 
 export const CircleShape = ({
   initialSize = 120,
-  initialColor = '#FF0000',
+  initialColor = '#F19832',
   idColor = 'circle-color',
   idNumber = 'circle-size',
   labelColor = 'Circle color',
@@ -24,7 +24,7 @@ export const CircleShape = ({
   }
 
   return (
-    <>
+    <div style={{ marginBottom: '4rem' }}>
       <form>
         <InputNumberGroup
           id={idNumber}
@@ -42,7 +42,7 @@ export const CircleShape = ({
         />
       </form>
       <Circle size={circleSize} color={circleColor} />
-    </>
+    </div>
   )
 }
 

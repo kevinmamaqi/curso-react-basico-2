@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Text, Title } from '../components/atoms'
+import { Title } from '../components/atoms'
 import {
   CircleShape,
   SquareShape,
   TriangleShape,
 } from '../components/organisms'
-import { colors } from '../styles'
 
 export function Ejercicios() {
-  const [tSize, setTSize] = useState(50)
-  const [cSize, setCSize] = useState(90)
-  const [sSize, setSSize] = useState(130)
+  const [tSize, setTSize] = useState('50')
+  const [cSize, setCSize] = useState('90')
+  const [sSize, setSSize] = useState('130')
 
   useEffect(() => {
     if (tSize === cSize && cSize === sSize) {
@@ -19,17 +18,13 @@ export function Ejercicios() {
   }, [tSize, cSize, sSize])
 
   return (
-    <div style={{ height: '124234234vh' }}>
+    <div style={{ height: '124234234vh', padding: '2rem' }}>
       <Title id="titulo-principal" order={3}>
-        Traductor
+        Ejercicio useState y useEffect.
       </Title>
-      <Text>Bienvenido</Text>
-      <Text color={colors.mainColor}>
-        Escribe las siguientes palabras en tu idioma.
-      </Text>
-      <TriangleShape initialSize={50} getSize={(val) => setTSize(val)} />
-      <CircleShape initialSize={90} getSize={(val) => setCSize(val)} />
-      <SquareShape initialSize={130} getSize={(val) => setSSize(val)} />
+      <TriangleShape initialSize={tSize} getSize={(val) => setTSize(val)} />
+      <CircleShape initialSize={cSize} getSize={(val) => setCSize(val)} />
+      <SquareShape initialSize={sSize} getSize={(val) => setSSize(val)} />
     </div>
   )
 }

@@ -22,6 +22,20 @@ const FormStyled = styled(FlexBox).attrs({ as: 'form' })`
   }
 `
 
+const BaseReqStatus = {
+  INITIAL: 'initial',
+  PENDING: 'pending',
+  SUCCESS: 'success',
+  ERROR: 'error',
+}
+
+const ReqStatus = {
+  user: { ...BaseReqStatus },
+  products: { ...BaseReqStatus },
+  invoices: { ...BaseReqStatus },
+  returned: { ...BaseReqStatus },
+}
+
 export const SubHeader = ({ setType, setCity }) => {
   const [searchParams] = useSearchParams()
 

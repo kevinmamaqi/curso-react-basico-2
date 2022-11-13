@@ -5,7 +5,7 @@ import { InputColorGroup, InputNumberGroup } from '../molecules'
 
 export const TriangleShape = ({
   initialSize = 120,
-  initialColor = '#FF0000',
+  initialColor = '#0088FF',
   idColor = 'triangle-color',
   idNumber = 'triangle-size',
   labelColor = 'Triangle color',
@@ -22,7 +22,7 @@ export const TriangleShape = ({
     }
   }
   return (
-    <>
+    <div style={{ marginBottom: '4rem' }}>
       <form>
         <InputNumberGroup
           id={idColor}
@@ -40,7 +40,7 @@ export const TriangleShape = ({
         />
       </form>
       <Triangle size={triangleSize} color={triangleColor} />
-    </>
+    </div>
   )
 }
 

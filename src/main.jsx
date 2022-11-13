@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Home, Ejercicios } from './pages'
+import { store } from './store/store'
+import { Provider } from 'react-redux'
+import { Home, Ejercicios, Flex } from './pages'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -27,10 +29,16 @@ const router = createBrowserRouter([
     element: <Ejercicios />,
     path: '/ejercicios',
   },
+  {
+    element: <Flex />,
+    path: '/flex',
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 )
