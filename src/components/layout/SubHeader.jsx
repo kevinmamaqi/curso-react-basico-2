@@ -29,13 +29,6 @@ const BaseReqStatus = {
   ERROR: 'error',
 }
 
-const ReqStatus = {
-  user: { ...BaseReqStatus },
-  products: { ...BaseReqStatus },
-  invoices: { ...BaseReqStatus },
-  returned: { ...BaseReqStatus },
-}
-
 export const SubHeader = ({ setType, setCity }) => {
   const [searchParams] = useSearchParams()
 

@@ -4,8 +4,6 @@ import { dimensions, colors } from '../../styles'
 import { Container } from './Container'
 
 const CardStyled = styled(Container).attrs({ px: '0px' })`
-  /* display: flex;
-  flex-direction: column; */
   border-radius: ${(props) => props.borderRadius};
   box-shadow: ${(props) => props.boxShadow};
 `
