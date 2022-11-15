@@ -8,6 +8,7 @@ const CheckoutStyled = styled(FlexBox)`
   background-color: #ffdebf;
   height: 100vh;
   width: 100vw;
+  padding: 2rem;
 `
 
 function CartSummary() {
@@ -25,7 +26,6 @@ function ProceedToPayButton() {
 function Checkout() {
   const methods = useForm()
 
-  console.log('methods', methods.watch('name'))
   return (
     <CheckoutStyled>
       <FormProvider {...methods}>
