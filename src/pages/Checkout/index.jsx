@@ -1,17 +1,14 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { FormProvider, useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import { FlexBox } from '../components/atoms'
+import { FlexBox } from '../../components/atoms'
+import { ShippingForm } from './ShippingForm'
 
 const CheckoutStyled = styled(FlexBox)`
   background-color: #ffdebf;
   height: 100vh;
   width: 100vw;
 `
-
-function ShippingForm() {
-  return 'shipping form'
-}
 
 function CartSummary() {
   return 'cart summary'
@@ -26,11 +23,16 @@ function ProceedToPayButton() {
 }
 
 function Checkout() {
-  const { register, handleSubmit, errors } = useForm()
-  const onSubmit = (data) => console.log(data)
+  const methods = useForm()
+
+  console.log('methods', methods.watch('name'))
   return (
     <CheckoutStyled>
-      <FlexBox as="form" onSubmit={handleSubmit(onSubmit)}></FlexBox>
+      <FormProvider {...methods}>
+        <FlexBox as="form">
+          <ShippingForm />
+        </FlexBox>
+      </FormProvider>
     </CheckoutStyled>
   )
 }
