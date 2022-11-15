@@ -28,6 +28,7 @@ export const Home = () => {
   return (
     <Body>
       <SubHeader setCity={setCity} setType={setType} />
+      Cabecera.
       <Houses city={city} type={type} />
     </Body>
   )
